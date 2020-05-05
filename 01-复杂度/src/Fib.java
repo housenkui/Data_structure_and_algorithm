@@ -3,7 +3,7 @@ public class Fib {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 System.out.println("Hello World ! 侯森魁1111 ");
+		 System.out.println("Hello World ! 侯森魁 ");
 	}
 	//时间复杂度:O(2^n)
     public  static int fib1(int N) {
