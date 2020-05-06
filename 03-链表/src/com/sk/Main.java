@@ -45,7 +45,6 @@ public class Main {
 	}
 	static void josephus() {
 		
-		
 		CircleLinkedList<Integer> list = new CircleLinkedList<Integer>();
 		for (int i = 0; i <= 8; i++) {
 			list.add(i);
