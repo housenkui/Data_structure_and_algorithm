@@ -18,9 +18,9 @@ public class Main {
 		AVLTree<Integer> avl = new AVLTree<>();
 		for (int i = 0; i < data.length; i++) {
 			avl.add(data[i]);
-//			System.out.println("【" + data[i] + "】");
-//			BinaryTrees.println(avl);
-//			System.out.println("---------------------------------------");
+			System.out.println("【" + data[i] + "】");
+			BinaryTrees.println(avl);
+			System.out.println("---------------------------------------");
 		}
 		
 //		for (int i = 0; i < data.length; i++) {

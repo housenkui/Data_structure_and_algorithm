@@ -2,6 +2,13 @@ package com.sk;
 
 import java.util.Comparator;
 
+/*
+ * 平衡因子：某节点的左右子树的高度差
+ * AVL树的特点:
+ * 每个节点的平衡因子只可能是1，0，-1 （绝对值小于等于1，如果超过1，称为失衡）
+ * 每个节点的左右子树的高度差不超过1
+ * 搜索、添加、删除的时间复杂度是O(logN)
+ * */
 public class AVLTree<E> extends BST<E> {
 	
 	public AVLTree() {
@@ -12,6 +19,10 @@ public class AVLTree<E> extends BST<E> {
 		super(comparator);
 	}
 	
+	/*
+	 * 可能会导致所有祖先节点都失衡
+	 * 只要让高度最低的失衡节点恢复平衡，整棵树就恢复平衡(仅需O(1)次调整)
+	 * */
 	@Override
 	protected void afterAdd(Node<E> node) {
 		while ((node = node.parent) != null) {
@@ -26,7 +37,10 @@ public class AVLTree<E> extends BST<E> {
 			}
 		}
 	}
-	
+	/*
+	 * 可能会导致父节点或祖先节点失衡(只有1个节点会失衡)
+	 * 恢复平衡后，可能会导致更高层的祖先节点失衡【最多需要O(logn)次调整】
+	 * */
 	@Override
 	protected void afterRemove(Node<E> node) {
 		while ((node = node.parent) != null) {
