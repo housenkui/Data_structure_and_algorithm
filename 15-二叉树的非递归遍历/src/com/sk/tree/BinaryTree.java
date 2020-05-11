@@ -24,6 +24,15 @@ public class BinaryTree<E> implements BinaryTreeInfo {
 		root = null;
 		size = 0;
 	}
+	/**
+	 *    1
+	 * 2    3
+	 * 使用栈采用非递归的方式前序遍历二叉树，
+	 * 先让树的根节点入栈，然后出栈，抛到外界进行访问，这个时候打印的就是①，然后再让，③，②依次入栈，此时②是处于栈顶的元素，
+	 * 下一次循环，②先出栈，此时栈中只有元素3，因为其左右子节点都为空，所以又进入下一次循环，将③出栈。
+	 * 所以外界的访问顺序是①->②->③. 符合前序遍历的规则：先遍历根节点，再前序遍历左子树，然后前序遍历右子树。
+	 * 
+	 * */
 	
 	public void preorder(Visitor<E> visitor) {
 		if (visitor == null || root == null) return;
